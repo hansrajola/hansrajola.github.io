@@ -13,7 +13,7 @@ const profileData = {
   avatarImage: "", // Optional: place an image in 'assets/images/profile.jpg' and write 'assets/images/profile.jpg' here
   web3FormsKey: "", // Optional: Get a free key at https://web3forms.com to receive real emails to your inbox!
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/olahansraj2021",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com",
     resume: "#"

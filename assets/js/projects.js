@@ -10,6 +10,8 @@ const profileData = {
   location: "IIT Bombay, Powai, Mumbai, India",
   status: "Working at IIT Bombay",
   email: "hansraj@iitb.ac.in",
+  avatarImage: "", // Optional: place an image in 'assets/images/profile.jpg' and write 'assets/images/profile.jpg' here
+  web3FormsKey: "", // Optional: Get a free key at https://web3forms.com to receive real emails to your inbox!
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",

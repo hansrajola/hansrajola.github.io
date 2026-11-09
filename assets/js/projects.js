@@ -1,15 +1,15 @@
 /**
- * Personal Website Data Store
- * Easily customize your details, projects, skills, and experience here!
+ * Personal Website Data Store for Hansraj Ola
+ * Customizing profile, projects, skills, and experience at IIT Bombay.
  */
 
 const profileData = {
-  name: "Alex Morgan",
-  title: "Full-Stack Engineer & Designer",
-  bio: "I craft elegant, high-performance web applications and intuitive digital experiences. Focused on modern web technologies, clean code architecture, and delightful UI interactions.",
-  location: "San Francisco, CA (or Remote)",
-  status: "Available for new opportunities",
-  email: "alex.morgan@example.com",
+  name: "Hansraj Ola",
+  title: "Python & Django Developer | Web Specialist @ IIT Bombay",
+  bio: "Software Developer and Web Specialist at IIT Bombay. Experienced in engineering robust Python & Django web platforms, RESTful APIs, and enterprise Content Management Systems (WordPress & Drupal) for academic and research ecosystems.",
+  location: "IIT Bombay, Powai, Mumbai, India",
+  status: "Working at IIT Bombay",
+  email: "hansraj@iitb.ac.in",
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
@@ -17,79 +17,79 @@ const profileData = {
     resume: "#"
   },
   stats: [
-    { label: "Years Experience", value: "4+" },
-    { label: "Projects Completed", value: "25+" },
-    { label: "Happy Clients / Teams", value: "15+" },
-    { label: "Open Source Stars", value: "1.2k" }
+    { label: "Institutional Portals", value: "20+" },
+    { label: "Django Web Apps", value: "15+" },
+    { label: "WordPress & Drupal Sites", value: "35+" },
+    { label: "Years in Web Tech", value: "5+" }
   ]
 };
 
-const projectCategories = ["All", "Web Apps", "Mobile & UI", "Open Source"];
+const projectCategories = ["All", "Django & Python", "CMS (WordPress/Drupal)", "Web Systems"];
 
 const projectsData = [
   {
     id: 1,
-    title: "OmniFlow AI Workspace",
-    category: "Web Apps",
-    description: "An AI-powered productivity assistant combining markdown note-taking, semantic search, and automated task scheduling with vector databases.",
-    imageGradient: "from-blue-600 via-indigo-600 to-purple-600",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI", "PostgreSQL"],
-    liveUrl: "https://example.com",
+    title: "IIT Bombay Academic & Research Portal",
+    category: "Django & Python",
+    description: "Enterprise web portal engineered with Python & Django to streamline faculty research publications, student project submissions, and departmental grant management with role-based access control.",
+    imageGradient: "from-blue-700 via-indigo-700 to-slate-900",
+    tags: ["Python", "Django", "PostgreSQL", "REST API", "Tailwind CSS"],
+    liveUrl: "https://www.iitb.ac.in",
     githubUrl: "https://github.com",
     featured: true
   },
   {
     id: 2,
-    title: "FinPulse Analytics Dashboard",
-    category: "Web Apps",
-    description: "Real-time personal finance and portfolio tracker with interactive chart visualizations, budget forecasts, and bank integration.",
-    imageGradient: "from-emerald-500 via-teal-600 to-cyan-600",
-    tags: ["React", "Chart.js", "Node.js", "Express", "MongoDB"],
-    liveUrl: "https://example.com",
+    title: "Multi-Departmental Drupal CMS Platform",
+    category: "CMS (WordPress/Drupal)",
+    description: "A centralized, high-availability multi-site Drupal architecture powering multiple academic departments and laboratories at IIT Bombay, featuring custom modules and taxonomy-driven news archives.",
+    imageGradient: "from-sky-600 via-blue-700 to-indigo-800",
+    tags: ["Drupal", "PHP", "MySQL", "Apache", "Custom Modules"],
+    liveUrl: "https://www.iitb.ac.in",
     githubUrl: "https://github.com",
     featured: true
   },
   {
     id: 3,
-    title: "Aura Mobile Design System",
-    category: "Mobile & UI",
-    description: "An accessible, responsive mobile UI component library built for rapid prototyping with dark mode and gesture animations.",
-    imageGradient: "from-pink-500 via-rose-500 to-amber-500",
-    tags: ["React Native", "Figma", "Tailwind", "Storybook"],
-    liveUrl: "https://example.com",
+    title: "Campus Event & Conference Management System",
+    category: "Django & Python",
+    description: "Custom Django web application handling national academic conference registrations, paper abstract submissions, review workflows, and automated email confirmations using Celery and Redis.",
+    imageGradient: "from-emerald-600 via-teal-700 to-slate-900",
+    tags: ["Django", "Python", "Celery", "Redis", "Bootstrap"],
+    liveUrl: "#",
     githubUrl: "https://github.com",
     featured: true
   },
   {
     id: 4,
-    title: "FastCache Engine",
-    category: "Open Source",
-    description: "Lightweight, in-memory LRU caching utility with microsecond response times and zero external runtime dependencies.",
-    imageGradient: "from-amber-500 via-orange-500 to-red-500",
-    tags: ["Go", "Distributed Systems", "Redis Protocol"],
-    liveUrl: "https://example.com",
+    title: "Institutional WordPress Portal Network",
+    category: "CMS (WordPress/Drupal)",
+    description: "Custom-themed WordPress network for specialized research centers and student innovation cells with optimized caching, custom post types, and high security against DDoS attacks.",
+    imageGradient: "from-cyan-600 via-teal-600 to-blue-800",
+    tags: ["WordPress", "Custom Themes", "PHP", "MySQL", "SEO"],
+    liveUrl: "#",
     githubUrl: "https://github.com",
     featured: false
   },
   {
     id: 5,
-    title: "DevDocs Hub",
-    category: "Open Source",
-    description: "Open-source developer documentation engine featuring instant full-text search, live code sandboxes, and offline PWA support.",
-    imageGradient: "from-cyan-500 via-blue-500 to-indigo-600",
-    tags: ["Vue 3", "Vite", "Tailwind CSS", "Algolia"],
-    liveUrl: "https://example.com",
+    title: "Student Course & Feedback Evaluation API",
+    category: "Django & Python",
+    description: "RESTful backend service built using Django REST Framework for semester-end course feedback, dynamic evaluation reporting, and encrypted survey submission handling thousands of concurrent users.",
+    imageGradient: "from-indigo-600 via-purple-700 to-slate-900",
+    tags: ["Python", "Django REST Framework", "PostgreSQL", "JWT"],
+    liveUrl: "#",
     githubUrl: "https://github.com",
     featured: false
   },
   {
     id: 6,
-    title: "SwiftPay Checkout Widget",
-    category: "Web Apps",
-    description: "High-conversion embedded payment widget with instant currency conversion, crypto support, and one-click Apple/Google Pay.",
-    imageGradient: "from-violet-600 via-purple-600 to-fuchsia-600",
-    tags: ["TypeScript", "Stripe API", "Web Components"],
-    liveUrl: "https://example.com",
+    title: "Central LDAP Authentication & SSO Middleware",
+    category: "Web Systems",
+    description: "Secure authentication middleware bridging IIT Bombay's LDAP and Single Sign-On (SSO) infrastructure with internal Django and CMS applications for seamless campus-wide login.",
+    imageGradient: "from-slate-700 via-slate-800 to-slate-950",
+    tags: ["Python", "LDAP / SSO", "Linux", "Security", "Nginx"],
+    liveUrl: "#",
     githubUrl: "https://github.com",
     featured: false
   }
@@ -97,48 +97,40 @@ const projectsData = [
 
 const skillCategories = [
   {
-    name: "Frontend Development",
+    name: "Python & Backend Frameworks",
     icon: "code",
-    skills: ["JavaScript (ESNext)", "TypeScript", "React / Next.js", "HTML5 & Modern CSS", "Tailwind CSS", "Vue.js", "Responsive Design"]
+    skills: ["Python (3.x)", "Django", "Django REST Framework", "Flask", "Celery", "RESTful APIs", "Object-Oriented Programming (OOP)"]
   },
   {
-    name: "Backend & Systems",
+    name: "CMS & Web Platforms",
     icon: "server",
-    skills: ["Node.js / Express", "Python / FastAPI", "RESTful & GraphQL APIs", "PostgreSQL / Prisma", "MongoDB", "Redis Caching"]
+    skills: ["WordPress (Custom Themes & Plugins)", "Drupal 9/10 (Module Dev)", "PHP", "Headless CMS", "Content Architecture", "Site Migration"]
   },
   {
-    name: "DevOps & Cloud",
+    name: "Databases & DevOps",
     icon: "cloud",
-    skills: ["Docker / Containers", "Git & GitHub Actions", "Vercel & Netlify", "AWS (S3, Lambda)", "Cloudflare Pages", "CI/CD Pipelines"]
+    skills: ["PostgreSQL", "MySQL", "Redis Caching", "Linux (Ubuntu / CentOS)", "Nginx & Apache", "Docker", "Git & GitHub"]
   },
   {
-    name: "Tools & Product",
+    name: "Frontend & Web Standards",
     icon: "sparkles",
-    skills: ["Figma UI/UX Design", "Performance Auditing", "SEO Optimization", "Jest & Playwright", "Agile & Scrum", "Technical Writing"]
+    skills: ["HTML5 & Semantic Markup", "Tailwind CSS", "Bootstrap", "JavaScript (ES6+)", "Web Accessibility (WCAG)", "SEO & Performance"]
   }
 ];
 
 const experienceData = [
   {
-    role: "Senior Full-Stack Developer",
-    company: "TechNova Solutions",
-    period: "2023 - Present",
-    description: "Spearheaded frontend architecture modernization, reducing load times by 42%. Mentored junior engineers and led key client-facing features.",
-    tags: ["TypeScript", "Next.js", "GraphQL", "AWS"]
+    role: "Software Developer & Web Specialist",
+    company: "Indian Institute of Technology (IIT) Bombay",
+    period: "Present",
+    description: "Architecting, developing, and maintaining critical web systems, institutional portals, and research databases. Leading the transition to modern Django web applications and managing enterprise WordPress & Drupal content management systems.",
+    tags: ["Python", "Django", "Drupal", "WordPress", "PostgreSQL", "Linux"]
   },
   {
-    role: "Frontend Engineer",
-    company: "PixelCraft Studios",
-    period: "2021 - 2023",
-    description: "Engineered scalable responsive web interfaces for high-growth SaaS startups. Built modular UI design systems used across 5 flagship apps.",
-    tags: ["React", "Tailwind CSS", "Redux", "Storybook"]
-  },
-  {
-    role: "Junior Software Developer",
-    company: "Apex Digital Lab",
-    period: "2020 - 2021",
-    description: "Developed and maintained full-stack internal tooling and customer billing portals. Implemented automated end-to-end testing suites.",
-    tags: ["JavaScript", "Node.js", "Express", "PostgreSQL"]
+    role: "Web & Python Developer",
+    company: "Higher Education & Research Portals",
+    period: "Previous",
+    description: "Developed custom web platforms, automated administrative workflows, implemented responsive frontend designs, and integrated secure campus databases with high uptime.",
+    tags: ["Django", "Python", "PHP", "MySQL", "Apache"]
   }
 ];
-

@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initContactForm();
   initScrollEffects();
+  initProjectModal();
+
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
 /* --------------------------------------------------
@@ -238,7 +242,7 @@ function renderProjects(selectedCategory = 'All') {
       <!-- Content -->
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+          <h3 onclick="openProjectModal(${project.id})" class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition cursor-pointer">
             ${project.title}
           </h3>
           <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
@@ -254,10 +258,15 @@ function renderProjects(selectedCategory = 'All') {
         </div>
 
         <!-- Links -->
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+        <div class="flex items-center gap-2 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+          <button onclick="openProjectModal(${project.id})"
+             class="px-3 py-2 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 transition"
+             title="Quick View Details">
+            <i class="fas fa-eye text-xs"></i>
+          </button>
           <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer"
              class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition">
-            <span>Live Demo</span>
+            <span>Live Portal</span>
             <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
           <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
@@ -376,3 +385,93 @@ function initScrollEffects() {
     });
   }
 }
+
+/* --------------------------------------------------
+ * 9. Project Details Modal
+ * -------------------------------------------------- */
+function initProjectModal() {
+  const modal = document.getElementById('project-modal');
+  const closeBtn = document.getElementById('project-modal-close');
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add('opacity-0');
+    const card = document.getElementById('project-modal-card');
+    if (card) card.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 200);
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+}
+
+function openProjectModal(projectId) {
+  const modal = document.getElementById('project-modal');
+  const card = document.getElementById('project-modal-card');
+  const content = document.getElementById('project-modal-content');
+  if (!modal || !content || !projectsData) return;
+
+  const project = projectsData.find(p => p.id === projectId);
+  if (!project) return;
+
+  content.innerHTML = `
+    <div class="space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-wider">
+        ${project.category}
+      </div>
+
+      <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">
+        ${project.title}
+      </h3>
+
+      <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+        ${project.description}
+      </p>
+
+      <div class="pt-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Technologies Used</h4>
+        <div class="flex flex-wrap gap-2">
+          ${project.tags.map(tag => `
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              ${tag}
+            </span>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+        <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer"
+           class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition shadow-md shadow-blue-500/20">
+          <span>Visit Live Platform</span>
+          <i class="fas fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+        <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition">
+          <i class="fab fa-github"></i>
+          <span>Repository</span>
+        </a>
+      </div>
+    </div>
+  `;
+
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    if (card) card.classList.remove('scale-95');
+  }, 10);
+}
+
